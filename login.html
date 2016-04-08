@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<head>
+<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
+
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<title>Login page</title>
+</head>
+<body>
+
+<div class="container">
+<h1 class="text-center">Login Page</h1>
+
+<form class="form-horizontal" id="form1">
+  <fieldset>
+    
+    <br></br>
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="Email">Email</label>
+      <div class="col-md-3">
+        <div class="input-group"> <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
+          <input id="Email" name="Email" type="text"  class="form-control input-md">
+        </div>
+      </div>
+    </div>
+    
+    
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="Password">Password</label>
+      <div class="col-md-3">
+        <div class="input-group"> <span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
+          <input id="password" name="password" type="password"  class="form-control input-md">
+        </div>
+      </div>
+    </div>
+    
+    
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="ConfirmPassword">Confirm Password</label>
+      <div class="col-md-3">
+        <div class="input-group"> <span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
+          <input id="password_again" name="password_again" type="password"  class="form-control input-md">
+        </div>
+      </div>
+    </div>
+    
+    
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="Submit"></label>
+      <div class="col-md-4">
+        <button id="Submit" class="btn btn-success" type="Submit">Log in</button>
+      </div>
+    </div>
+  </fieldset>
+</form>
+</div>
+<script>
+
+  $('#form1').validate({
+    rules:{
+    Email:
+            {
+
+            required:true,
+            email:true
+            },
+    password:
+            {
+            required:true,
+            minlength:3,
+            maxlength:10
+            },
+    password_again:{
+            equalTo:"#password"
+
+            }
+          },
+  })();
+
+</script>
+
+</body>
+</html>
